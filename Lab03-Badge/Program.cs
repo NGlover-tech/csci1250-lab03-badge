@@ -1,4 +1,11 @@
-using Microsoft.AspNetCore.Components.Forms;
+/*
+* Name: Your Full Name
+* Course: CSCI 1250, Section 001
+* Assignment: Lab 03, The Badge Office
+* Date: September 30, 2026
+* Description: Builds a student badge from a name, two random assignments,
+* and the walking distance to a first class.
+*/
 
 //Question for what their name is
 System.Console.Write("What is your name? ");
@@ -54,3 +61,14 @@ double walkTimeSeconds = Math.Round(distance / walkingSpeed%60, 0);
 //Output
 System.Console.WriteLine($"Distance: {distance.ToString("F1")} feet");
 System.Console.WriteLine($"Walk Time: {Math.Floor(walkTimeMinutes)} minutes {walkTimeSeconds.ToString("F0")} seconds");
+
+//The final resulting badge
+System.Console.WriteLine("==================================");
+System.Console.WriteLine("        ETSU STUDENT BADGE");
+System.Console.WriteLine("==================================");
+System.Console.WriteLine("NAME".PadRight(10) + upperfullName);
+System.Console.WriteLine("USERNAME".PadRight(10) + firstInitial.ToLower() + lastName.ToLower());
+System.Console.WriteLine("ID".PadRight(10) + studentIdNumber + "-" + studentIdNumber%9);
+System.Console.WriteLine("LOCKER".PadRight(10) + lockerNumber);
+System.Console.WriteLine("WALK".PadRight(10) + Math.Floor(walkTimeMinutes) + " min " + walkTimeSeconds.ToString("F0") + " sec");
+System.Console.WriteLine("==================================");
