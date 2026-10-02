@@ -20,10 +20,37 @@ System.Console.WriteLine($"Username: {firstInitial.ToLower()}{lastName.ToLower()
 System.Console.WriteLine($"Initials: {firstInitial.ToUpper()}.{lastInitial.ToUpper()}.");
 System.Console.WriteLine($"Letters in last name: {numbersInLast}");
 
+// Setting random
 Random rng = new Random();
 
+//rng for variables 
 int studentIdNumber = rng.Next(100000, 1000000);
 int lockerNumber = rng.Next(1, 501);
 
+//output of rng
 System.Console.WriteLine($"Student ID: {studentIdNumber}");
 System.Console.WriteLine($"Locker: {lockerNumber}");
+
+//Questions for distance and walk speed
+System.Console.WriteLine("What is your dorm's x-cord?");
+int dormX = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("What is your dorm's y-cord?");
+int dormY = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("What is your classroom's x-cord?");
+int classroomX = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("What is your classroom's y-cord?");
+int classroomY = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("What is your walking speed in feet per second?");
+double walkingSpeed = Convert.ToDouble(Console.ReadLine());
+
+//Calculations for distance and walking
+double xPart = Math.Pow(classroomX - dormX,2);
+double yPart = Math.Pow(classroomY - dormY,2);
+double addingParts = xPart + yPart;
+double distance = Math.Sqrt(addingParts);
+double walkTimeMinutes = distance/ (int)walkingSpeed/60;
+double walkTimeSeconds = Math.Round(distance / walkingSpeed%60, 0);
+
+//Output
+System.Console.WriteLine($"Distance: {distance.ToString("F1")} feet");
+System.Console.WriteLine($"Walk Time: {Math.Floor(walkTimeMinutes)} minutes {walkTimeSeconds.ToString("F0")} seconds");
