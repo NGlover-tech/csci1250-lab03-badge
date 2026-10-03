@@ -1,6 +1,6 @@
 /*
-* Name: Your Full Name
-* Course: CSCI 1250, Section 001
+* Name: Nicholas Glover
+* Course: CSCI 1250, Section 002
 * Assignment: Lab 03, The Badge Office
 * Date: September 30, 2026
 * Description: Builds a student badge from a name, two random assignments,
